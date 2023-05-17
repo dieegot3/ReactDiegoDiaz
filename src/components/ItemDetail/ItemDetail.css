@@ -1,0 +1,38 @@
+.GameDetails {
+  display: flex;
+  gap: 2rem;
+}
+
+.GameDetailsImg {
+  border-radius: 10px;
+  width: 75%;
+  max-height: 800px;
+  object-fit: cover;
+}
+
+.GameDetailsInfo {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+}
+
+.Category {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.Price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.Launch {
+  opacity: 50%;
+  font-size: 18px;
+}
+
+.Stock {
+  opacity: 50%;
+  font-size: 18px;
+}

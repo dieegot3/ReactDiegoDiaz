@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "title": "Age of Empires II",
+    "price": 2480,
+    "category": "estrategia",
+    "stock": 10,
+    "launch": 2019,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/AgeOfEmpiresII.jpg?alt=media&token=6573fe88-fc81-4baf-956a-76c1a4f0f4bd"
+  },
+  {
+    "id": 2,
+    "title": "Ark Survival Evolved",
+    "price": 1420,
+    "category": "supervivencia",
+    "stock": 25,
+    "launch": 2017,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/ArkSurvivalEvolved.jpg?alt=media&token=610b8eec-4aac-4662-b6e5-ec6fceb6a9d8"
+  },
+  {
+    "id": 3,
+    "title": "Battlefield 2042",
+    "price": 4530,
+    "category": "disparos",
+    "stock": 8,
+    "launch": 2021,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Battlefield2042.jpg?alt=media&token=53824441-8798-46d6-a80a-b2f5e344838c"
+  },
+  {
+    "id": 4,
+    "title": "Dark Souls Remastered",
+    "price": 1620,
+    "category": "rol",
+    "stock": 12,
+    "launch": 2018,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/DarkSoulsRemastered.jpg?alt=media&token=9b25d1a4-5f7c-409b-be93-7450b57ca219"
+  },
+  {
+    "id": 5,
+    "title": "Dead by Daylight",
+    "price": 1040,
+    "category": "supervivencia",
+    "stock": 16,
+    "launch": 2016,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/DeadByDaylight.jpg?alt=media&token=23fe5f78-577e-4b3a-9435-649871080301"
+  },
+  {
+    "id": 6,
+    "title": "Elite Dangerous",
+    "price": 2400,
+    "category": "simulacion",
+    "stock": 20,
+    "launch": 2015,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/EliteDangerous.jpg?alt=media&token=41d152f9-41f8-4029-8f51-4b73d9408a18"
+  },
+  {
+    "id": 7,
+    "title": "Battlefield V",
+    "price": 2670,
+    "category": "disparos",
+    "stock": 14,
+    "launch": 2018,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/BattlefieldV.jpg?alt=media&token=057db110-2526-43df-9079-12f1a3fb799a"
+  },
+  {
+    "id": 8,
+    "title": "Cyberpunk 2077",
+    "price": 3260,
+    "category": "rol",
+    "stock": 25,
+    "launch": 2020,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Cyberpunk2077.jpg?alt=media&token=8274a5ed-a87b-4adf-8db6-6dc25801b804"
+  },
+  {
+    "id": 9,
+    "title": "Hogwarts Legacy",
+    "price": 4100,
+    "category": "rol",
+    "stock": 15,
+    "launch": 2023,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/HogwartsLegacy.jpg?alt=media&token=f9f6bf7e-54aa-470c-8501-b6c451b39d82"
+  },
+  {
+    "id": 10,
+    "title": "No Man's Sky",
+    "price": 1220,
+    "category": "supervivencia",
+    "stock": 17,
+    "launch": 2016,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/NoMansSky.jpg?alt=media&token=3bce8d50-a1eb-4593-9134-a37d6603962c"
+  },
+  {
+    "id": 11,
+    "title": "Skyrim",
+    "price": 1350,
+    "category": "rol",
+    "stock": 11,
+    "launch": 2011,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Skyrim.jpg?alt=media&token=e373a533-7158-478e-b8bd-51366bcc0f16"
+  },
+  {
+    "id": 12,
+    "title": "SpiderMan Remastered",
+    "price": 3610,
+    "category": "acción",
+    "stock": 20,
+    "launch": 2022,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/SpiderManRemastered.jpg?alt=media&token=0663b360-e90f-47b5-99e6-12af6d117bd4"
+  },
+  {
+    "id": 13,
+    "title": "Stray",
+    "price": 2890,
+    "category": "aventura",
+    "stock": 10,
+    "launch": 2022,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Stray.jpg?alt=media&token=12259788-0c7d-46cf-8eea-ad7fb2f720ee"
+  },
+  {
+    "id": 14,
+    "title": "Assassin's Creed Valhalla",
+    "price": 5400,
+    "category": "rol",
+    "stock": 13,
+    "launch": 2021,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/AssassinsCreedValhalla.jpg?alt=media&token=eb031f8f-9bb4-4dae-af5a-80ae19834e22"
+  },
+  {
+    "id": 15,
+    "title": "Assetto Corsa",
+    "price": 870,
+    "category": "simulacion",
+    "stock": 23,
+    "launch": 2012,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/AssettoCorsa.jpg?alt=media&token=f0d9187c-0b2a-4286-9903-e6259f3338e1"
+  },
+  {
+    "id": 16,
+    "title": "Atomic Heart",
+    "price": 4410,
+    "category": "aventura",
+    "stock": 15,
+    "launch": 2023,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/AtomicHeart.jpg?alt=media&token=9e5759ee-cad1-48df-b774-a8381f8fe19e"
+  },
+  {
+    "id": 17,
+    "title": "Dying Light 2",
+    "price": 2830,
+    "category": "aventura",
+    "stock": 8,
+    "launch": 2022,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/DyingLight2.jpg?alt=media&token=b1d66738-8458-4588-b21b-bf687f2b8ec8"
+  },
+  {
+    "id": 18,
+    "title": "Elden Ring",
+    "price": 5700,
+    "category": "rol",
+    "stock": 14,
+    "launch": 2022,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/EldenRing.jpg?alt=media&token=9912604e-f49c-4d10-b7d4-595e621c35a4"
+  },
+  {
+    "id": 19,
+    "title": "GTA V",
+    "price": 1580,
+    "category": "acción",
+    "stock": 19,
+    "launch": 2015,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/GTAV.jpg?alt=media&token=e2b91d6f-beea-4b72-bc4e-b13562a27c0c"
+  },
+  {
+    "id": 20,
+    "title": "Horizon Zero Dawn",
+    "price": 1340,
+    "category": "aventura",
+    "stock": 20,
+    "launch": 2020,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/HorizonZeroDawn.jpg?alt=media&token=73cb315a-552d-4700-b92b-2ef193e5920d"
+  },
+  {
+    "id": 21,
+    "title": "Injustice 2",
+    "price": 1160,
+    "category": "pelea",
+    "stock": 25,
+    "launch": 2017,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Injustice2.jpg?alt=media&token=26dcb9c5-1d21-4290-88d3-40276659a317"
+  },
+  {
+    "id": 22,
+    "title": "Metro Exodus",
+    "price": 1970,
+    "category": "acción",
+    "stock": 10,
+    "launch": 2019,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/MetroExodus.jpg?alt=media&token=1b31bda8-a39c-4be0-a64d-cb9af02f2fa9"
+  },
+  {
+    "id": 23,
+    "title": "Rust",
+    "price": 2400,
+    "category": "rol",
+    "stock": 14,
+    "launch": 2018,
+    "img": "https://firebasestorage.googleapis.com/v0/b/diegodiaz-ad2cf.appspot.com/o/Rust.jpg?alt=media&token=f51e500c-c3f0-4022-a08f-3fee84ab4368"
+  },
+  {
+    "id": 24,
+    "title": "The Witcher 3",
+    "price": 3350,
+    "category": "rol",
+    "stock": 18,
+    "launch": 2015,
+    "img": "https://i.ibb.co/qjDpKTP/The-Witcher3.jpg"
+  }
+]

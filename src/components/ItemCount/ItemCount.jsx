@@ -1,16 +1,22 @@
-import { useCount } from "../../hooks/useCount.js"
+import "./ItemCount.css";
+import { useCount } from "../../hooks/useCount.js";
 
-export const ItemCount = ({ ValInicial, min, max, onAdd }) => {
-
-  const { count, minus, sum, reset } = useCount(ValInicial, min, max)
+export const ItemCount = ({ ValInitial, min, max, onAdd }) => {
+  const { count, minus, sum, reset } = useCount(ValInitial, min, max);
 
   return (
     <>
-      <button className="btn btn-dark" onClick={minus}>-</button>
-      {count}
-      <button className="btn btn-dark" onClick={sum}>+</button>
-      <button className="btn btn-dark" onClick={reset}>Reset</button>
-      <button className="btn btn-light" onClick={() => onAdd(count)}>Agregar al Carrito</button>
+      <div className="Counter">
+        <div className="Controls">
+          <button onClick={minus}>-</button>
+          {count}
+          <button onClick={sum}>+</button>
+          <button onClick={reset}>Reset</button>
+        </div>
+        <button className="AddButton" onClick={() => onAdd(count)}>
+          Agregar al Carrito
+        </button>
+      </div>
     </>
-  )
-}
+  );
+};

@@ -1,69 +1,60 @@
 import { useState, createContext, useContext } from "react";
 
-const CarritoContext = createContext() //Creo mi contexto
+const CartContext = createContext();
 
-export const useCarritoContext = () => useContext(CarritoContext) //Creo una funcion para poder consultar mi contexto
+export const useCartContext = () => useContext(CartContext);
 
-export const CarritoProvider = (props) => { //Forma de proveer el contexto en mi app, puede recibir props si es necesario
+export const CartProvider = (props) => {
+  const [cart, setCart] = useState([]);
 
-    const [carrito, setCarrito] = useState([])
+  const isInCart = (id) => {
+    return cart.some((prod) => prod.id === id);
+  };
 
-    //Agregar producto - Quitar producto - Vaciar carrito
-    //Obtener Cantidad (Subtotales) - Obtener Total Price - Buscar Producto
-
-    const isInCart = (id) => {
-        //Find => Obj - Some => Booleano
-        return carrito.some(prod => prod.id === id) //V o F
+  const addItem = (item, quantity) => {
+    if (isInCart(item.id)) {
+      const indice = cart.findIndex((prod) => prod.id === item.id);
+      const aux = [...cart];
+      aux[indice].quantity = quantity;
+      setCart(aux);
+    } else {
+      const newItem = {
+        ...item,
+        quantity: quantity,
+      };
+      setCart([...cart, newItem]); //Genero una copia del carrito + el nuevo producto
     }
+  };
 
-    const addItem = (item, quantity) => {
-        if (isInCart(item.id)) { //Consulto si el producto existe o no en el carrito
-            //Consulto y seteo la cantidad en el carrito
-            const indice = carrito.findIndex(prod => prod.id === item.id)
-            const aux = [...carrito]
-            aux[indice].quantity = quantity
-            setCarrito(aux)
-        } else {
-            //Creo un nuevo objeto con los datos ingresados
-            const newItem = {
-                ...item,
-                quantity: quantity //Si agrego directamente el parametro se queda con el mismo nombre
-            }
-            /*//Genero un aux que es igual al carrito para poder hacer el push
-            const aux = carrito
-            aux.push(newItem)
-            setCarrito(aux)*/
-            setCarrito([...carrito, newItem]) //Genero una copia del carrito + el nuevo producto
-        }
-    }
+  const removeItem = (id) => {
+    setCart(cart.filter((prod) => prod.id !== id));
+  };
 
-    const removeItem = (id) => {
-        /*const aux = [...carrito]
-        const indice = aux.findIndex(prod => prod.id === id)
-        setCarrito(aux.splice(indice,1))*/
+  const emptyCart = () => {
+    setCart([]);
+  };
 
-        //Traeme todos los productos que no tengan el id ingresado
-        setCarrito(carrito.filter(prod => prod.id !== id))
-    }
+  const getItemQuantity = () => {
+    //Devuelvo la cantidad de productos en mi carrito
+    return cart.reduce((acum, prod) => (acum += prod.quantity), 0);
+  };
 
-    const emptyCart = () => {
-        setCarrito([])
-    }
+  const totalPrice = () => {
+    return cart.reduce((acum, prod) => (acum += prod.quantity * prod.price), 0);
+  };
 
-    const getItemQuantity = () => {
-        //Devuelvo la cantidad de productos en mi carrito
-        return carrito.reduce((acum, prod) => acum += prod.quantity, 0)
-    }
-
-    const totalPrice = () => {
-        return carrito.reduce((acum, prod) => acum += (prod.quantity * prod.precio), 0)
-    }
-
-    return (
-        <CarritoContext.Provider value={{ carrito, addItem, removeItem, emptyCart, totalPrice, getItemQuantity }}>
-            {props.children}
-
-        </CarritoContext.Provider>
-    )
-
-}
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        emptyCart,
+        totalPrice,
+        getItemQuantity,
+      }}
+    >
+      {props.children}
+    </CartContext.Provider>
+  );
+};

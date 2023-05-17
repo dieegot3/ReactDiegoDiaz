@@ -1,37 +1,26 @@
-import { useState, useEffect } from "react"
-import { ItemList } from "../ItemList/ItemList"
-import { useParams } from "react-router-dom"
-import { useDarkModeContext } from "../../context/DarkModeContext.js"
-import { getProducts } from "../../firebase/firebase.js"
+import { useState, useEffect } from "react";
+import { ItemList } from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../../firebase/firebase.js";
 export const ItemListContainer = () => {
-
-  const [productos, setProductos] = useState([])
-  const { category } = useParams()
-  const { darkMode } = useDarkModeContext()
+  const [games, setGames] = useState([]);
+  const { idCategory } = useParams();
 
   useEffect(() => {
-
-    if (category) { //Consulto si me ingresaron un parametro en la url
-      getProducts()
-        .then(productos => {
-          const productosFiltrados = productos.filter(prod => prod.stock > 0).filter(prod => prod.idCategoria === parseInt(category))
-          setProductos(productosFiltrados)
-
-        })
+    if (idCategory) {
+      getProducts().then((games) => {
+        const gamesFiltrados = games
+          .filter((prod) => prod.stock > 0)
+          .filter((prod) => prod.category === parseInt(idCategory));
+        setGames(gamesFiltrados);
+      });
     } else {
-      getProducts()
-        .then(productos => {
-          const productosFiltrados = productos.filter(prod => prod.stock > 0)
-          setProductos(productosFiltrados)
-
-        })
+      getProducts().then((games) => {
+        const gamesFiltrados = games.filter((prod) => prod.stock > 0);
+        setGames(gamesFiltrados);
+      });
     }
+  }, [idCategory]);
 
-  }, [category]) //Cada ves que se modifique la categoria
-
-  return (
-    <div className="row">
-      {<ItemList productos={productos} plantilla={"Item"} />}
-    </div>
-  )
-}
+  return <div>{<ItemList games={games} plantilla={"Item"} />}</div>;
+};

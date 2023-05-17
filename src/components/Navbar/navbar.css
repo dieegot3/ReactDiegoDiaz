@@ -1,0 +1,18 @@
+.Categories {
+  display: flex;
+  gap: 3rem;
+}
+
+.ActiveOption {
+  font-size: 18px;
+  text-shadow: #abb7f7 8px 4px 8px;
+}
+
+.Option {
+  font-size: 18px;
+  color: white;
+}
+
+.Brand {
+  margin-left: 2rem;
+}
