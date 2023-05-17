@@ -1,7 +1,6 @@
 * {
-  color: #878787;
   list-style: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Sora", Arial, sans-serif;
 }
 
 body {
@@ -14,6 +13,18 @@ button {
 
 h1 {
   color: #cc54eb;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 14px;
 }
 
 p {

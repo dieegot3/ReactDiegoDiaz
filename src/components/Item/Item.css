@@ -1,29 +1,40 @@
 .CardGame {
-  display: flex;
-  flex: 0 24%;
-  gap: 1rem;
   position: relative;
+  display: flex;
+  gap: 1rem;
   align-items: center;
+  padding-bottom: 1.5rem;
   height: 100%;
   min-width: 350px;
   border-radius: 18px;
 }
 
 .GameImg {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center;
   border-radius: 12px;
 }
 
 .GameInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-left: 10px;
-  min-width: 250px;
+  min-width: 290px;
 }
 
-.GameInfoExtra {
+.GameInfoLeft {
+  max-width: 230px;
+}
+
+.GameInfoOpacity {
   opacity: 70%;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .ClickSpace {

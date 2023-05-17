@@ -33,7 +33,7 @@ export const createProducts = async () => {
     await addDoc(collection(bd, "games"), {
       title: prod.title,
       price: prod.price,
-      category: prod.category,
+      genre: prod.genre,
       stock: prod.stock,
       launch: prod.launch,
       img: prod.img,

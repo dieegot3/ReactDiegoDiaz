@@ -6,7 +6,7 @@
 .GameDetailsImg {
   border-radius: 10px;
   width: 75%;
-  max-height: 800px;
+  max-height: 700px;
   object-fit: cover;
 }
 
@@ -17,22 +17,23 @@
   min-width: 230px;
 }
 
-.Category {
-  font-weight: 700;
-  font-size: 20px;
+.GameDetailsText {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .Price {
+  font-family: "Sora", Arial, sans-serif;
   font-weight: 700;
   font-size: 20px;
+  padding-top: 2rem;
 }
 
 .Launch {
   opacity: 50%;
-  font-size: 18px;
 }
 
 .Stock {
   opacity: 50%;
-  font-size: 18px;
 }

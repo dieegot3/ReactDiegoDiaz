@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../firebase/firebase.js";
 export const ItemListContainer = () => {
   const [games, setGames] = useState([]);
-  const { idCategory } = useParams();
+  const { category } = useParams();
 
   useEffect(() => {
-    if (idCategory) {
+    if (category) {
       getProducts().then((games) => {
         const gamesFiltrados = games
           .filter((prod) => prod.stock > 0)
-          .filter((prod) => prod.category === parseInt(idCategory));
+          .filter((prod) => prod.genre === category);
         setGames(gamesFiltrados);
       });
     } else {
@@ -20,7 +20,12 @@ export const ItemListContainer = () => {
         setGames(gamesFiltrados);
       });
     }
-  }, [idCategory]);
+  }, [category]);
 
-  return <div>{<ItemList games={games} plantilla={"Item"} />}</div>;
+  return (
+    <>
+      <h2 className="PageTitle">Tienda</h2>;
+      <div>{<ItemList games={games} plantilla={"Item"} />}</div>;
+    </>
+  );
 };

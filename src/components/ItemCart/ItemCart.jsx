@@ -1,33 +1,38 @@
+import "./ItemCart.css";
 import { useCartContext } from "../../context/CartContext";
+import { MdDeleteForever } from "react-icons/md";
+
+const subtotalPrice = (item) => {
+  const subtotal =
+    item.quantity > 1 ? `Subtotal: $${item.price * item.quantity}` : "";
+  return subtotal;
+};
+
 export const ItemCart = ({ item }) => {
   const { removeItem } = useCartContext();
+
   return (
-    <div className="card mb-3 cardCart">
-      <div className="row g-0">
-        <div className="col-md-4">
-          <img
-            src={item.img}
-            className="img-fluid rounded-start"
-            alt={`Imagen de ${item.title}`}
-          />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">
+    <section className="Cart">
+      <div className="GameInCart">
+        <img
+          className="CartGameImg"
+          src={item.img}
+          alt={`Imagen de ${item.title}`}
+        />
+        <div className="CartGameData">
+          <div>
+            <h4>
               {item.nombre} {item.title}
-            </h5>
-            <p className="card-text">Cantidad: {item.quantity}</p>
-            <p className="card-text">Precio Unitario:$ {item.price}</p>
-            <p className="card-text">Subtotal: ${item.price * item.quantity}</p>
-            <button
-              className="btn btn-danger"
-              onClick={() => removeItem(item.id)}
-            >
-              <i className="fas fa-trash-alt"></i>
-            </button>
+            </h4>
+            <p className="CartGameText">Cantidad: {item.quantity}</p>
+            <p className="CartGameText">${item.price}</p>
+            <p className="CartGameText">{subtotalPrice(item)}</p>
           </div>
+          <button onClick={() => removeItem(item.id)}>
+            <MdDeleteForever className="RemoveIcon" />
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

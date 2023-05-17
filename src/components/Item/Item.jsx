@@ -6,12 +6,12 @@ export const Item = ({ item }) => {
     <article className="CardGame">
       <img className="GameImg" src={item.img} alt={`Imagen de ${item.title}`} />
       <section className="GameInfo">
-        <h2>{item.title}</h2>
-        <p className="Price">${item.price}</p>
-        <div className="GameInfoExtra">
-          <p>{item.category}</p>
-          <p>lanzamiento: {item.launch}</p>
+        <div className="GameInfoLeft">
+          <h3>{item.title}</h3>
+          <p className="GameInfoOpacity">Categoría: {item.genre}</p>
+          <p className="GameInfoOpacity">{item.launch}</p>
         </div>
+        <h4 className="GameInfoPrice">${item.price}</h4>
       </section>
       <button className="ClickSpace">
         <Link to={`/game/${item.id}`} className="Option">

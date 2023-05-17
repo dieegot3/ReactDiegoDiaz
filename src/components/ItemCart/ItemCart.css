@@ -1,0 +1,39 @@
+.Cart {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.GameInCart {
+  display: flex;
+  align-items: center;
+  margin: 0 0 2rem 1.5rem;
+  justify-content: space-between;
+}
+
+.CartGameImg {
+  width: 140px;
+  height: 140px;
+  box-shadow: none;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.RemoveIcon {
+  width: 30px;
+  height: 30px;
+  color: #cc54eb;
+}
+
+.CartGameData {
+  display: flex;
+  width: 100%;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+.CartGameText {
+  font-size: 14px;
+  margin-bottom: 6px;
+}

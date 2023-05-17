@@ -22,7 +22,7 @@ export const CartProvider = (props) => {
         ...item,
         quantity: quantity,
       };
-      setCart([...cart, newItem]); //Genero una copia del carrito + el nuevo producto
+      setCart([...cart, newItem]);
     }
   };
 
@@ -35,7 +35,6 @@ export const CartProvider = (props) => {
   };
 
   const getItemQuantity = () => {
-    //Devuelvo la cantidad de productos en mi carrito
     return cart.reduce((acum, prod) => (acum += prod.quantity), 0);
   };
 

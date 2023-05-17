@@ -1,12 +1,19 @@
+.PageTitle {
+  padding: 9rem 0 3rem 0;
+  width: 80%;
+  margin: auto;
+  color: #f0f0f0;
+}
+
 .ListGroup {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  padding-top: 8rem;
   width: 80%;
   margin: auto;
   animation: inicio 1.5s linear;
   animation-delay: 0s;
   animation-delay: 2s;
+  color: #f0f0f0;
 }
