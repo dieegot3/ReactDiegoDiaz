@@ -34,7 +34,7 @@ button {
   padding-top: 1rem;
 }
 
-.AddButton {
+.MainBtn {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,3 +1,4 @@
+import "./Checkout.css";
 import { useRef } from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,30 +10,22 @@ import {
 import { toast } from "react-toastify";
 
 export const Checkout = () => {
-  const datForm = useRef(); //Crear una referencia para consultar los valoresa actuales del form
+  const datForm = useRef();
   const { cart, totalPrice, emptyCart } = useCartContext();
 
-  let navigate = useNavigate(); //Devuelve la localizacion actual
+  let navigate = useNavigate();
   const consultForm = (e) => {
-    //Consultar los datos del formulario
     e.preventDefault();
-
-    const datosForm = new FormData(datForm.current); //Pasar de HTML a Objeto Iterable
-    const cliente = Object.fromEntries(datosForm); //Pasar de objeto iterable a objeto simple
-
+    const datosForm = new FormData(datForm.current);
+    const cliente = Object.fromEntries(datosForm);
     const aux = [...cart];
-
-    //Recorrer mi carrito y descontar el stock
     aux.forEach((prodCart) => {
       getProduct(prodCart.id).then((prodDB) => {
         if (prodDB.stock >= prodCart.quantity) {
-          //Si el stock de mi producto en la BDD es mayor o igual a la cantidad que el cliente quiere comprar de mi producto, descuento el stock
           prodDB.stock -= prodCart.quantity;
-          updateProduct(prodDB.id, prodDB); //Enviarle a la BDD el producto descontando su stock
+          updateProduct(prodDB.id, prodDB);
         } else {
-          console.log(
-            "El stock no es mayor o igual a la cantidad que se quiere comprar"
-          );
+          console.log("No hay stock disponible para la cantidad seleccionada");
         }
       });
     });
@@ -52,9 +45,9 @@ export const Checkout = () => {
     )
       .then((ordenCompra) => {
         toast(
-          ` 🛒 Muchas gracias por comprar con nosotros, su ID de compra es ${
+          ` 🛒 Compra realizada. El Id de tu compra es ${
             ordenCompra.id
-          } por un total de ${totalPrice()}, en breve nos contactaremos para el envio`,
+          } por un total de ${totalPrice()}, muchas gracias!`,
           {
             position: "top-right",
             autoClose: 5000,
@@ -67,8 +60,8 @@ export const Checkout = () => {
           }
         );
         emptyCart();
-        e.target.reset(); //Reset form
-        navigate("/"); //Defino la ruta hacia donde quiero redirigir
+        e.target.reset();
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);

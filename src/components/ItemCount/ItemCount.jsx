@@ -21,7 +21,7 @@ export const ItemCount = ({ ValInitial, min, max, onAdd }) => {
             <RxReset className="IconCount" />
           </button>
         </div>
-        <button className="AddButton" onClick={() => onAdd(count)}>
+        <button className="MainBtn" onClick={() => onAdd(count)}>
           Agregar al Carrito
         </button>
       </div>

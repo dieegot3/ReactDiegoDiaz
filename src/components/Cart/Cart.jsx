@@ -8,12 +8,19 @@ export const Cart = () => {
     <>
       {cart.length === 0 ? (
         <>
-          <h1>Carrito Vacio</h1>
-          <button className="btn btn-dark">
-            <Link to={"/"} className="nav-link">
-              Continuar comprando
+          <h2 className="PageTitle">Carrito Vacio</h2>
+
+          <div className="ContinueContainer">
+            <p>
+              No tenés juegos agregados por ahora pero podés seguir buscando
+              juegos nuevos desde acá:
+            </p>
+            <Link to={"/"}>
+              <button className="MainBtn MediumBtn Gap">
+                Continuar Comprando
+              </button>
             </Link>
-          </button>
+          </div>
         </>
       ) : (
         <>
@@ -24,13 +31,15 @@ export const Cart = () => {
               <h3 className="TotalPrice">
                 Resumen de la compra: ${totalPrice()}
               </h3>
-              <button onClick={() => emptyCart()}>Vaciar Carrito</button>
-              <Link to={"/"}>
-                <button>Continuar Comprando</button>
-              </Link>
-              <Link className="CheckoutBtn" to={"/checkout"}>
-                <button>Finalizar Compra</button>
-              </Link>
+              <div className="EditCartBtns">
+                <button onClick={() => emptyCart()}>Vaciar Carrito</button>
+                <Link to={"/"}>
+                  <button>Continuar Comprando</button>
+                </Link>
+                <Link className="MainBtn MediumBtn" to={"/checkout"}>
+                  <button>Finalizar Compra</button>
+                </Link>
+              </div>
             </div>
           </div>
         </>
