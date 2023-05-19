@@ -1,0 +1,31 @@
+.FormContainer {
+  color: #f0f0f0;
+  width: 80%;
+  margin: auto;
+}
+
+.FormInput {
+  display: block;
+  width: 100%;
+  color: #f0f0f0;
+  margin-top: 0.8rem;
+  padding: 1rem 0;
+  background-color: #373a3f;
+  border-radius: 12px;
+  border-style: none;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.SelectOptions {
+  display: flex;
+  gap: 2rem;
+}
+
+.Select {
+  color: #909194;
+}
+
+::placeholder {
+  color: #f0f0f0;
+}

@@ -50,13 +50,13 @@ export const Checkout = () => {
           } por un total de ${totalPrice()}, muchas gracias!`,
           {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 6000,
+            theme: "dark",
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "dark",
           }
         );
         emptyCart();
@@ -71,64 +71,111 @@ export const Checkout = () => {
     <>
       {cart.length === 0 ? (
         <>
-          <h2>Para finalizar compra debe tener productos en el carrito</h2>
-          <Link className="nav-link" to={"/"}>
-            <button className="btn btn-primary">Continuar comprando</button>
-          </Link>
+          <h2 className="PageTitle">Carrito Vacio</h2>
+          <div className="ContinueContainer">
+            <p>Para finalizar la compra debes tener juegos en el carrito</p>
+            <Link to={"/"}>
+              <button className="MainBtn MediumBtn Gap">
+                Continuar Comprando
+              </button>
+            </Link>
+          </div>
         </>
       ) : (
-        <div className="container divForm">
-          <form onSubmit={consultForm} ref={datForm}>
-            <div className="mb-3">
-              <label htmlFor="nombre" className="form-label">
-                Nombre y Apellido
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                name="nombre"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
-              <input type="email" className="form-control" name="email" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Repetir Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                name="emailRepetido"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="dni" className="form-label">
-                DNI
-              </label>
-              <input type="number" className="form-control" name="dni" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="celular" className="form-label">
-                Numero telefonico
-              </label>
-              <input type="number" className="form-control" name="celular" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="direccion" className="form-label">
-                Direccion
-              </label>
-              <input type="text" className="form-control" name="direccion" />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Finalizar Compra
-            </button>
-          </form>
-        </div>
+        <>
+          <h2 className="PageTitle">Completar compra</h2>
+          <section className="FormContainer">
+            <h3>Complete los siguientes campos de información:</h3>
+            <form onSubmit={consultForm} ref={datForm}>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  className="FormInput"
+                  placeholder="Nombre"
+                  required
+                />
+                <input
+                  type="text"
+                  name="surname"
+                  className="FormInput"
+                  placeholder="Apellido"
+                  required
+                />
+                <input
+                  type="text"
+                  name="location"
+                  className="FormInput"
+                  placeholder="Localidad"
+                  required
+                />
+                <input
+                  type="email"
+                  className="FormInput"
+                  placeholder="tu-correo@gmail.com"
+                  required
+                />
+                <input
+                  type="email"
+                  className="FormInput"
+                  placeholder="Repetir Email"
+                  required
+                />
+                <div className="SelectOptions">
+                  <select className="FormInput Select" required>
+                    <option value="" disabled selected>
+                      País
+                    </option>
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="mexico">Mexico</option>
+                    <option value="cuba">Cuba</option>
+                    <option value="peru">Perú</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="puertoRico">Puerto Rico</option>
+                    <option value="panama">Panamá</option>
+                    <option value="honduras">Honduras</option>
+                    <option value="jamaica">Jamaica</option>
+                  </select>
+                  <select className="FormInput Select" required>
+                    <option value="" disabled selected>
+                      Tarjeta
+                    </option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                  </select>
+                </div>
+                <input
+                  className="FormInput"
+                  inputmode="numeric"
+                  maxlength="16"
+                  name="cardNumber"
+                  placeholder="xxxx xxxx xxxx xxxx"
+                  required
+                ></input>
+                <input
+                  class="FormInput"
+                  type="password"
+                  maxlength="3"
+                  autocomplete="off"
+                  name="cardCode"
+                  placeholder="Código de seguridad"
+                  required
+                ></input>
+              </div>
+              <button type="submit" className="MainBtn MediumBtn">
+                Finalizar Compra
+              </button>
+            </form>
+          </section>
+        </>
       )}
     </>
   );

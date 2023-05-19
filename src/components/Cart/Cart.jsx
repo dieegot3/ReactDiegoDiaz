@@ -9,7 +9,6 @@ export const Cart = () => {
       {cart.length === 0 ? (
         <>
           <h2 className="PageTitle">Carrito Vacio</h2>
-
           <div className="ContinueContainer">
             <p>
               No tenés juegos agregados por ahora pero podés seguir buscando
