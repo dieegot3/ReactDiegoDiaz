@@ -11,6 +11,8 @@ import { toast } from "react-toastify";
 
 export const Checkout = () => {
   const datForm = useRef();
+  const email = useRef();
+  const repeatEmail = useRef();
   const { cart, totalPrice, emptyCart } = useCartContext();
 
   let navigate = useNavigate();
@@ -18,54 +20,69 @@ export const Checkout = () => {
     e.preventDefault();
     const datosForm = new FormData(datForm.current);
     const cliente = Object.fromEntries(datosForm);
-    const aux = [...cart];
-    aux.forEach((prodCart) => {
-      getProduct(prodCart.id).then((prodDB) => {
-        if (prodDB.stock >= prodCart.quantity) {
-          prodDB.stock -= prodCart.quantity;
-          updateProduct(prodDB.id, prodDB);
-        } else {
-          console.log("No hay stock disponible para la cantidad seleccionada");
-        }
+    if (cliente.email !== cliente.repeatemail) {
+      toast.warning(`El email debe ser el mismo en ambos campos`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
-    });
-    const aux2 = aux.map((prod) => ({
-      id: prod.id,
-      quantity: prod.quantity,
-      price: prod.price,
-    }));
-
-    createOrdenCompra(
-      cliente,
-      totalPrice(),
-      aux2,
-      new Date().toLocaleString("es-AR", {
-        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      })
-    )
-      .then((ordenCompra) => {
-        toast(
-          ` 🛒 Compra realizada. El Id de tu compra es ${
-            ordenCompra.id
-          } por un total de ${totalPrice()}, muchas gracias!`,
-          {
-            position: "top-right",
-            autoClose: 6000,
-            theme: "dark",
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
+    } else {
+      const aux = [...cart];
+      aux.forEach((prodCart) => {
+        getProduct(prodCart.id).then((prodDB) => {
+          if (prodDB.stock >= prodCart.quantity) {
+            prodDB.stock -= prodCart.quantity;
+            updateProduct(prodDB.id, prodDB);
+          } else {
+            console.log(
+              "No hay stock disponible para la cantidad seleccionada"
+            );
           }
-        );
-        emptyCart();
-        e.target.reset();
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error(error);
+        });
       });
+      const aux2 = aux.map((prod) => ({
+        id: prod.id,
+        quantity: prod.quantity,
+        price: prod.price,
+      }));
+
+      createOrdenCompra(
+        cliente,
+        totalPrice(),
+        aux2,
+        new Date().toLocaleString("es-AR", {
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        })
+      )
+        .then((ordenCompra) => {
+          toast(
+            ` 🛒 Compra realizada. El Id de tu compra es ${
+              ordenCompra.id
+            } por un total de ${totalPrice()}, muchas gracias!`,
+            {
+              position: "top-right",
+              autoClose: 6000,
+              theme: "dark",
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            }
+          );
+          emptyCart();
+          e.target.reset();
+          navigate("/");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   };
   return (
     <>
@@ -111,14 +128,18 @@ export const Checkout = () => {
                 />
                 <input
                   type="email"
+                  name="email"
                   className="FormInput"
                   placeholder="tu-correo@gmail.com"
+                  ref={email}
                   required
                 />
                 <input
                   type="email"
+                  name="repeatemail"
                   className="FormInput"
                   placeholder="Repetir Email"
+                  ref={repeatEmail}
                   required
                 />
                 <div className="SelectOptions">

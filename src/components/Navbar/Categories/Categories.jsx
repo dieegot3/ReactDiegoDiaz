@@ -1,25 +1,27 @@
 import "./Categories.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { memo } from "react";
 export const Categories = memo(() => {
   return (
     <>
-      <li>
-        <Link className="Option" to={"/category/estrategia"}>
-          Estrategia
-        </Link>
-      </li>
-
-      <li>
-        <Link className="Option" to={"/category/supervivencia"}>
-          Supervivencia
-        </Link>
-      </li>
-      <li>
-        <Link className="Option" to={"/category/rol"}>
-          Rol
-        </Link>
-      </li>
+      <NavLink
+        className={({ isActive }) => (isActive ? "ActiveOption" : "Option")}
+        to={"/category/estrategia"}
+      >
+        Estrategia
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "ActiveOption" : "Option")}
+        to={"/category/supervivencia"}
+      >
+        Supervivencia
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "ActiveOption" : "Option")}
+        to={"/category/rol"}
+      >
+        Rol
+      </NavLink>
     </>
   );
 });

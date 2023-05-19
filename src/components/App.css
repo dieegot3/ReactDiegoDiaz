@@ -48,16 +48,12 @@
 }
 
 .Navbar {
-  display: flex;
   background-color: #28262c;
   z-index: 9999;
-  align-items: center;
-  justify-content: space-between;
   height: 74px;
-  width: 90%;
   position: fixed;
+  width: 100%;
   top: 0;
-  margin: auto;
 }
 
 .cartIcon {
