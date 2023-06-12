@@ -8,7 +8,7 @@ _Instalar React:_
   npx create-react-app
 ```
 
-_Dependencias utilizadas en el protecto:_
+_Dependencias utilizadas en el proyecto:_
 
 ```
   npm i firebase
