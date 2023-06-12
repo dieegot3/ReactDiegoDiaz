@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./lanvabar.css";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import { Categories } from "./Categories/Categories";
