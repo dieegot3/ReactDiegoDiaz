@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./Navbar/Navbar";
 import { ItemListContainer } from "./ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./ItemDetailContainer/ItemDetailContainer";
 import { Checkout } from "./Checkout/Checkout";
@@ -14,7 +13,6 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <ToastContainer />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
