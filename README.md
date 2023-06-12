@@ -19,13 +19,13 @@ _Dependencias utilizadas en el proyecto:_
 
 ## Ejecutar la app localmente:
 
-Con el proyecto ya instalado, se debe abrir una nueva terminal y ejecutar el siguiente comando que abrirá el proyecto en el navegador en el puerto localhost:3000 :
+Con el proyecto ya instalado, se debe abrir una nueva terminal y ejecutar el siguiente comando que abrirá el proyecto en el navegador en el puerto localhost:3000
 
 ```
   npm start
 ```
 
-También puede se puede visualizar el repositorio desde Vercel en la siguiente dirección:
+También puede se puede visualizar el repositorio desde Vercel en la siguiente url:
 
 ```
 https://react-diego-diaz-g7fupc54n-dieegot3.vercel.app/
